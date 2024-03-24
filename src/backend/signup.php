@@ -13,13 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $experience = isset($_POST['experience']) ? $_POST['experience'] : '';
         $education = isset($_POST['education']) ? $_POST['education'] : '';
   
-        $check_email = $mysqli->prepare('SELECT email FROM users WHERE email=?');
-        $check_email->bind_param('s', $email);
-        $check_email->execute();
-        $check_email->store_result();
-        $email_exists = $check_email->num_rows();
+        $query = $mysqli->prepare('SELECT email FROM users WHERE email=?');
+        $query->bind_param('s', $email);
+        $query->execute();
+        $query->store_result();
+        $numRows = $query->num_rows();
 
-        if ($email_exists == 0) {
+        if ($numRows == 0) {
             $hashed_password = password_hash($password, PASSWORD_BCRYPT);
             $query = $mysqli->prepare('INSERT INTO users (name, email, password,bio,experience,education) VALUES (?,?,?,?,?,?)');
             $query->bind_param('ssssss', $name, $email, $hashed_password,$bio,$experience,$education);
