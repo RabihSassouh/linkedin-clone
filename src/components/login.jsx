@@ -5,13 +5,13 @@ import "./loginSignup.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  
   const handleLogin = async () => {
-    const formData = new FormData();
-    formData.append("email", email);
-    formData.append("password", password);
+      const formData = new FormData();
+      formData.append("email", email);
+      formData.append("password", password);
     try {
-      const response = await axios.post("../backend/login.php", formData);
+      const response = await axios.post("http://localhost/linkedin-clone/src/backend/login.php", formData);
 
       if (response.data.status === "logged in") {
         console.log("Login successful");
@@ -30,10 +30,10 @@ const Login = () => {
           <img className="login-logo" src="/images/login-logo.svg" alt="" />
         </a>
         <div className="navbar-links">
-          <a href="#">Articles</a>
-          <a href="#">People</a>
-          <a  href="#">Join Now</a>
-          <a className="login" href="#">Login</a>
+          <a >Articles</a>
+          <a >People</a>
+          <a >Join Now</a>
+          <a className="login" >Login</a>
         </div>
       </div>
       <section className="section1">
@@ -49,7 +49,7 @@ const Login = () => {
         </div>
       </section>
 
-      {/* <div className="login-container">
+      <div className="login-container">
         <h2>Login</h2>
         <input
           type="email"
@@ -64,7 +64,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button onClick={handleLogin}>Login</button>
-      </div> */}
+      </div>
     </div>
   );
 };

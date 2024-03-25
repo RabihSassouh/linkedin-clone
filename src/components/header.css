@@ -1,0 +1,70 @@
+.Container {
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0 24px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 767px) {
+    padding: 15px;
+  }
+}
+.Content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Logo {
+  margin-right: 8px;
+}
+.Search {
+  opacity: 1;
+  width: 30%;
+
+  input {
+    border: none;
+    background-color: #eef3f8;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.9);
+    width: 218px;
+    line-height: 1.75;
+  }
+}
+
+.nav-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* margin-left: 20px; */
+  width: 60%;
+  @media (max-width: 768px) {
+    position: fixed;
+    width: 80%;
+  }
+}
+.NavListWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 40px;
+  width: 100%;
+}
+
+.NavList {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    min-width: 70px;
+  }
+}
