@@ -1,16 +1,20 @@
-
-// import './App.css';
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Login from "./pages/loginSignup/login";
-import Signup from "./pages/loginSignup/signup";
+import Login from "./components/login";
+import Signup from "./components/signup";
 function App() {
     return (
-        <div className="app-container">
-            <Login/>
-            <Signup/>
+        <div className="app">
+            <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<Login /> }/>
+                        {/* <Signup/> */}
+            
+                    </Routes>
+            </BrowserRouter>
         </div>
-    )
-}
+    );
+};
 
 export default App;
