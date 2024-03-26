@@ -11,6 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($query->execute()) {
             $response['status'] = "success";
+            $response['post']=array(
+                'id'=>$mysqli->insert_id,
+                'content'=>$content,
+                'user_id'=>$user_id
+            );
         } else {
             $response['status'] = "Can't add post";
         }
