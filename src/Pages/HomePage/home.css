@@ -24,10 +24,9 @@
     margin-bottom: 10px;
   }
   
-  .profile-info .stat {
+  .static {
     font-size: 18px;
-    font-weight: bold;
-    margin-right: 20px;
+    color: rgb(172, 170, 170);
   }
   
   .profile-info button {

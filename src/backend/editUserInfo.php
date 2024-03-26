@@ -1,12 +1,15 @@
 <?php
 include('connection.php');
 
+$json= file_get_contents('php://input');
+$data= json_decode($json,true);
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    if (!empty($_POST['user_id']) && !empty($_POST['bio']) && !empty($_POST['experience']) && !empty($_POST['education'])) {
-        $user_id = $_POST['user_id'];
-        $bio = $_POST['bio'];
-        $experience = $_POST['experience'];
-        $education = $_POST['education'];
+    if (!empty($data['user_id']) && !empty($data['bio']) && !empty($data['experience']) && !empty($data['education'])) {
+        $user_id = $data['user_id'];
+        $bio = $data['bio'];
+        $experience = $data['experience'];
+        $education = $data['education'];
 
         $query = $mysqli->prepare("UPDATE users SET bio = ?, experience = ?, education = ? WHERE id = ?");
         $query->bind_param("sssi", $bio, $experience, $education, $user_id);
