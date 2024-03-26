@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./loginSignup.css";
 
-const Login = ({switchHandler}) => {
+const Login = () => {
   const navigate=useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,7 +34,7 @@ const Login = ({switchHandler}) => {
         <div className="navbar-links">
           <a >Articles</a>
           <a >People</a>
-          <a >Join Now</a>
+          <a href="/signup">Join Now</a>
           <a className="login" >Login</a>
         </div>
       </div>

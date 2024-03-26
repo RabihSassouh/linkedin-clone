@@ -10,8 +10,8 @@ include('connection.php');
         $result = $query->get_result();
 
         if ($result->num_rows > 0) {
-            $users = $result->fetch_assoc();
-            echo json_encode(array("status" => "success", "profile" => $users));
+            $user = $result->fetch_assoc();
+            echo json_encode(array("status" => "success", "user" => $user));
         } else {
             echo json_encode(array("status" => "error", "message" => "User profile not found"));
         }
