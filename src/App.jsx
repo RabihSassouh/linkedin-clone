@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Login from "./components/login";
-import Signup from "./components/signup";
-import Home from "./components/home";
-import Header from "./components/header";
+import Login from "./Pages/Athentications/login";
+import Signup from "./Pages/Athentications/signup";
+import Home from "./Pages/HomePage/home";
+import Header from "./Pages/HomePage/components/header";
 function App() {
     return (
         <div className="app">

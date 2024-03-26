@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./loginSignup.css";
 
-const Login = () => {
+const Login = ({switchHandler}) => {
+  const navigate=useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   
   const handleLogin = async () => {
+    try {
       const formData = new FormData();
       formData.append("email", email);
       formData.append("password", password);
-    try {
       const response = await axios.post("http://localhost/linkedin-clone/src/backend/login.php", formData);
 
       if (response.data.status === "logged in") {
-        console.log("Login successful");
+        navigate("/home");
       } else {
         console.error("Login failed:", response.data.status);
       }
