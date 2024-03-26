@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "./components/header";
+import Post from "./components/post";
 import axios from "axios";
 
 import "./home.css";
@@ -68,6 +69,7 @@ const Home = () => {
   return (
     <div>
       <Header />
+      <Post />
       {user && (
         <div className="user-profile">
           <div className="profile-info">
